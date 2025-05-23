@@ -48,7 +48,7 @@ export function ImageBackground() {
       <Image
         src="/header-sape.png"
         alt="Animated background"
-        className="p-10"
+        className="p-10 absolute"
         fill
         priority
         style={{

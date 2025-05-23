@@ -6,8 +6,8 @@ import React from "react";
 
 export function HeroSection() {
   return (
-    <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
-      <div className="px-4 py-5 md:py-10">
+    <div className="relative flex min-h-screen flex-col justify-center items-center px-4 mx-auto max-w-7xl mt-10">
+      <div className="px-4 py-5 md:py-10 space-y-5">
         <h1 className="relative mx-auto max-w-4xl text-center text-4xl leading-snug font-extrabold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
           {"Transforming Bold Ideas into Brilliant Realities."
             .split(" ")
@@ -26,6 +26,7 @@ export function HeroSection() {
               </motion.span>
             ))}
         </h1>
+
         <motion.p
           initial={{
             opacity: 0,

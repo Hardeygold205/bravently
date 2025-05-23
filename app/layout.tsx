@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bravently Technology | Powering Bold Innovations",
+  title: "Bravonax Technology | Powering Bold Innovations",
   description:
     "Braventy Technology is a bold innovation company specializing in building world-class digital solutions.",
   openGraph: {
-    title: "Bravently Technology | Powering Bold Innovations",
+    title: "Branovax Technology | Powering Bold Innovations",
     description:
       "Braventy Technology is a bold innovation company specializing in building world-class digital solutions.",
     url: "https://bravently.com",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/bravently-logo.png",
         width: 1200,
         height: 630,
-        alt: "Bravently Technology",
+        alt: "Bravanox Technology",
       },
     ],
     locale: "en_US",

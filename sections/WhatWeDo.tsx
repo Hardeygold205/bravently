@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export function WhatWeDo() {
   return (
     <div>
-      What we do
+      <div>
+        <h1>Services We Can Help With</h1>
+      </div>
+      <div>Cards</div>
     </div>
-  )
+  );
 }
-
-
