@@ -39,7 +39,7 @@ export function HeroSection() {
             delay: 0.8,
           }}
           className="relative mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400">
-          Braventy Technology is a bold innovation company specializing in
+          Branovax Technology is a bold innovation company specializing in
           building world-class digital solutions. From mobile apps and websites
           to Web3 projects, gaming engines, and e-commerce platforms, we deliver
           fearless creativity backed by technical excellence.

@@ -225,7 +225,13 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <Link href="/" className="relative z-20 flex items-center font-normal">
-      <Image src="/bravently-logo.png" alt="logo" className="w-30 md:w-50" width={200} height={200} />
+      <Image
+        src="/Branovax_Logo.PNG"
+        alt="logo"
+        className="w-30 md:w-50"
+        width={200}
+        height={200}
+      />
     </Link>
   );
 };

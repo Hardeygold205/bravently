@@ -22,20 +22,20 @@ export const AnimatedTooltip = ({
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
-  const x = useMotionValue(0); // going to set this value on mouse move
-  // rotate the tooltip
+  const x = useMotionValue(0);
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
     springConfig
   );
-  // translate the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
-  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+  const handleMouseMove = (
+    event: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
     const halfWidth = (event.target as HTMLImageElement).offsetWidth / 2;
-    x.set(event.nativeEvent.offsetX - halfWidth); 
+    x.set(event.nativeEvent.offsetX - halfWidth);
   };
 
   return (
