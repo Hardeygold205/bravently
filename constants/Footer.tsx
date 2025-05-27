@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Logo & About */}
         <div className="lg:col-span-2">
           <Image
-            src="/Branovax_Logo.png"
+            src="/Branovax_Logo.PNG"
             alt="Branovax Logo"
             className="w-48 h-auto"
             width={192}

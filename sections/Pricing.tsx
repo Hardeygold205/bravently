@@ -58,7 +58,9 @@ export default function Pricing() {
     <section className="py-16 bg-base-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 uppercase">Development Packages</h1>
+          <h1 className="text-4xl font-bold mb-4 uppercase">
+            Development Packages
+          </h1>
           <p className="text-xl text-base-content/80 max-w-[30rem] mx-auto">
             We different kinds of Packages, choose one that best for your
             project
