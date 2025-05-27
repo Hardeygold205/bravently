@@ -43,13 +43,13 @@ export default function Footer() {
       <footer className="footer bg-base-200 text-base-content border-base-300 border-t  mx-auto max-w-7xl py-10">
         <aside className="grid-flow-col items-center">
           <Image
-            src="/bravently-logo.png"
+            src="/Branovax_Logo.PNG"
             width={100}
             height={100}
             alt="logo"
           />
           <p>
-            Bravently Technologies Ltd.
+            Branovax Technologies Ltd.
             <br />
             Providing reliable tech since 2021
           </p>

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { NavbarMenu } from "@/constants/NavbarMenu";
 import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
 import Footer from "@/constants/Footer";
+
+const JetBrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-JetBrains",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,25 +22,60 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bravonax Technology | Powering Bold Innovations",
+  title: "Branovax Technology | Powering Bold Innovations",
+  keywords: [
+    "web developer",
+    "Hadi Ademola",
+    "frontend developer",
+    "full-stack developer",
+    "JavaScript developer",
+    "React developer",
+    "Backend developer",
+    "Game developer",
+    "Django developer",
+    "IT Company",
+    "Branovax Technology",
+  ],
+  authors: [{ name: "Hadi Ademola" }, { name: "Ifejika Vincent" }],
   description:
     "Braventy Technology is a bold innovation company specializing in building world-class digital solutions.",
   openGraph: {
     title: "Branovax Technology | Powering Bold Innovations",
     description:
-      "Braventy Technology is a bold innovation company specializing in building world-class digital solutions.",
-    url: "https://bravently.com",
-    siteName: "Bravently Technology",
+      "Branovax Technology is a bold innovation company specializing in building world-class digital solutions.",
+    url: "https://branovax.com",
+    siteName: "Branovax Technology | Powering Bold Innovations",
     images: [
       {
-        url: "/bravently-logo.png",
+        url: "/Branovax_home.png",
         width: 1200,
         height: 630,
-        alt: "Bravanox Technology",
+        alt: "Bravanox Technology Logo",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  icons: {
+    icon: "/Branovax_icon.png",
+    shortcut: "/Branovax_icon.png",
+    apple: "/Branovax_icon.png",
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/Branovax_icon.png",
+        color: "#5bbad5",
+      },
+    ],
+  },
+  twitter: {
+    site: "@Branovax",
+    card: "summary_large_image",
+    title: "Branovax Technology | Powering Bold Innovations",
+    description:
+      "Branovax Technology is a bold innovation company specializing in building world-class digital solutions.",
+    images: ["/Branovax_home.png"],
+    creator: "@Hardeygold205",
   },
 };
 
@@ -46,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${JetBrains.variable} font-sans antialiased`}>
         <div>
           <NavbarMenu />
           <BackgroundGrid>{children}</BackgroundGrid>
