@@ -17,7 +17,7 @@ export function BackgroundGrid({ children }: { children: React.ReactNode }) {
           "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
         )}
       />
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="pointer-events-none bg-gradient-to-b from-blue-200 via-black-200 to-white-50 absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       {children}
     </div>
   );

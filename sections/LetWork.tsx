@@ -4,55 +4,102 @@ import Image from "next/image";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function LetWork() {
   const [phone, setPhone] = useState("");
   const [text, setText] = useState("");
 
   return (
-    <div className="relative mx-auto my-10">
-      <div>
-        <h1 className="text-5xl text-center font-bold">Let’s Work Together</h1>
+    <div className="relative mx-auto my-10 ">
+      <div className="py-3">
+        <h1 className="text-4xl text-center font-bold">
+          Schedule Your Appointment
+        </h1>
+        <p className="text-xl text-center text-gray-600 mt-2">
+          We here to help you 24/7 with experts
+        </p>
       </div>
-      <div className="max-w-7xl mx-auto py-16 px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="max-w-7xl mx-auto p-4 items-center xl:py-16 px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 shadow-xl rounded-3xl">
         {/* Form Section */}
         <form className="bg-base-200 shadow-lg rounded-xl p-6 space-y-4">
-          <input
+          <Input
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Full Name*"
-            className="input w-full input-xl "
+            placeholder="Full Name"
           />
-          <input
-            type="email"
-            placeholder="Email*"
-            className="input w-full input-xl"
-          />
+          <Input type="email" placeholder="Email" />
 
           <PhoneInput
             country={"us"}
             value={phone}
             onChange={(value) => setPhone(value)}
-            inputStyle={{ width: "100%", paddingTop: 5, paddingBottom: 5 }}
+            inputStyle={{
+              width: "100%",
+              height: "40px",
+              paddingTop: 5,
+              paddingBottom: 5,
+            }}
           />
-
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <select className="input-field">
-              <option>How did you hear about us?</option>
-              <option value="1">fajklfa</option>
-              <option value="2">djknfa</option>
-            </select>
-            <select className="input-field">
-              <option>What is your budget?</option>
-            </select>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="How did you hear about us?" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectItem value="apple">Apple</SelectItem>
+                  <SelectItem value="banana">Banana</SelectItem>
+                  <SelectItem value="blueberry">Blueberry</SelectItem>
+                  <SelectItem value="grapes">Grapes</SelectItem>
+                  <SelectItem value="pineapple">Pineapple</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="What is your budget?" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectItem value="apple">Apple</SelectItem>
+                  <SelectItem value="banana">Banana</SelectItem>
+                  <SelectItem value="blueberry">Blueberry</SelectItem>
+                  <SelectItem value="grapes">Grapes</SelectItem>
+                  <SelectItem value="pineapple">Pineapple</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
           </div>
 
-          <select className="input-field">
-            <option>Fixed Price Model</option>
-          </select>
+          <Select>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Your Payment Model" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Fixed Price Model</SelectLabel>
+                <SelectItem value="apple">Apple</SelectItem>
+                <SelectItem value="banana">Banana</SelectItem>
+                <SelectItem value="blueberry">Blueberry</SelectItem>
+                <SelectItem value="grapes">Grapes</SelectItem>
+                <SelectItem value="pineapple">Pineapple</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
 
-          <textarea placeholder="Message" className="input-field h-28" />
+          <Textarea placeholder="Message" className="h-20 w-full" />
 
           <div className="text-sm text-gray-500">
             📎 Attach files (10MB, max 3 files)
@@ -62,19 +109,18 @@ export default function LetWork() {
 
           <button
             type="submit"
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-md w-full font-semibold">
+            className="w-full transform rounded-lg bg-slate-700 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
             Submit
           </button>
         </form>
 
-        {/* Info Section */}
         <div className="space-y-6">
           <Image
-            src="/8CB7C81C-74C9-4B7F-B380-DB75AFA37C90.jpg"
+            src="/Branovax-Office.jpg"
             alt="Office Room"
             className="rounded-lg shadow-md"
-            width={1000}
-            height={1000}
+            width={1200}
+            height={1200}
           />
 
           <div>

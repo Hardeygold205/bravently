@@ -48,7 +48,7 @@ export function ColourfulText({ text }: { text: string }) {
       }}
       transition={{
         duration: 0.5,
-        delay: index * 0.05,
+        delay: index * 0.1,
       }}
       className="inline-block whitespace-pre font-sans tracking-tight">
       {char}

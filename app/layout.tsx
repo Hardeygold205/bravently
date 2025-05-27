@@ -1,25 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
 import { NavbarMenu } from "@/constants/NavbarMenu";
 import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
 import Footer from "@/constants/Footer";
 
-const JetBrains = JetBrains_Mono({
+// const JetBrains = JetBrains_Mono({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+//   variable: "--font-JetBrains",
+// });
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+const jostSans = Jost({
+  variable: "--font-jost-sans",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-JetBrains",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Branovax Technology | Powering Bold Innovations",
@@ -86,9 +91,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${JetBrains.variable} font-sans antialiased`}>
-        <div>
+      <body className={`${jostSans.variable} font-sans antialiased`}>
+        <div className="font-sans">
           <NavbarMenu />
           <BackgroundGrid>{children}</BackgroundGrid>
           <Footer />
