@@ -23,7 +23,7 @@ export default function LetWork() {
   return (
     <div className="relative mx-auto my-10 ">
       <div className="py-3">
-        <h1 className="text-4xl text-center font-bold">
+        <h1 className="text-4xl text-center font-bold uppercase">
           Schedule Your Appointment
         </h1>
         <p className="text-xl text-center text-gray-600 mt-2">

@@ -104,9 +104,12 @@ export default function WhatWeDo() {
   return (
     <section className="py-16 bg-base-100 z-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold max-w-lg mx-auto text-center mb-12">
-          We Are Offering All Kinds of IT Solutions Services
-        </h2>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4 uppercase">OUR SERVICES</h1>
+          <p className="text-xl text-base-content/80 max-w-[30rem] mx-auto">
+            We Are Offering All Kinds of IT Solutions Services
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
