@@ -14,7 +14,9 @@ const TechnologyCard = ({
   icon,
 }: TechnologyCardProps) => {
   return (
-    <div className="card bg-white shadow-2xl hover:bg-base-300 transition-colors p-6 h-full z-100">
+    <div
+      className="card bg-white shadow-2xl transition-all duration-300 ease-in-out 
+                       transform hover:translate-y-1.5 hover:shadow-3xl cursor-pointer p-6 h-full z-10">
       <div className="flex flex-col h-full">
         <div className="mb-4 text-primary">{icon}</div>
         <h3 className="text-2xl font-bold mb-2">{title}</h3>

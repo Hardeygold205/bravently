@@ -87,7 +87,7 @@ export function NavbarMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar className="fixed">
+    <Navbar className="fixed z-100">
       <NavBody className="p-4">
         <NavbarLogo />
         <NavigationMenu>

@@ -111,13 +111,13 @@ export default function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 z-10">
           {services.map((service, index) => (
             <div
               key={index}
               className="card bg-base-200 shadow-2xl p-5 rounded-3xl
                        transition-all duration-300 ease-in-out 
-                       transform hover:scale-105 hover:shadow-3xl cursor-pointer">
+                       transform hover:scale-105 hover:shadow-3xl cursor-pointer z-60">
               <div className="card-body items-center text-center py-3">
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="card-title text-xl mb-2 py-2 font-extrabold">
