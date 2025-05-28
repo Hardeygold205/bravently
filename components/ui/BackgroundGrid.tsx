@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export function BackgroundGrid({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex h-full w-full items-center justify-center">
+    <div className="relative flex  h-full w-full items-center justify-center">
       <ImageBackground />
       <div
         className={cn(

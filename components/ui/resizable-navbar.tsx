@@ -196,7 +196,7 @@ export const MobileNavMenu = ({
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, }}
           exit={{ opacity: 0 }}
           className={cn(
             "absolute bg-white dark:bg-black top-12 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
@@ -217,9 +217,17 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX
+      className="text-black border p-1 border-white rounded-sm dark:text-white"
+      onClick={onClick}
+      size={40}
+    />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2
+      className="text-black border p-1 border-white rounded-sm dark:text-white"
+      onClick={onClick}
+      size={40}
+    />
   );
 };
 
