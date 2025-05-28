@@ -1,3 +1,6 @@
+"use client"
+
+import React from "react";
 import {
   Smartphone,
   Globe,
@@ -8,16 +11,38 @@ import {
   Search,
   LayoutPanelTop,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 12,
+      },
+    },
+  };
+
   const services = [
     {
       title: "Mobile Development",
       icon: (
-        <Smartphone
-          style={{ animationDelay: "5s", animationDuration: "3s" }}
-          className="w-8 h-8 text-primary animate-spin"
-        />
+        <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 1 }}>
+          <Smartphone className="w-8 h-8 text-primary" />
+        </motion.div>
       ),
       description:
         "Native iOS/Android app development with cross-platform frameworks like Flutter and React Native for seamless user experiences.",
@@ -111,13 +136,22 @@ export default function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 z-10">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 z-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}>
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="card bg-base-200 shadow-2xl p-5 rounded-3xl
-                       transition-all duration-300 ease-in-out 
-                       transform hover:scale-105 hover:shadow-3xl cursor-pointer z-60">
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 12px 20px rgba(0,0,0,0.1)",
+              }}
+              className="card bg-base-200 shadow-2xl p-5 rounded-3xl 
+                 transition-all duration-300 ease-in-out cursor-pointer z-60">
               <div className="card-body items-center text-center py-3">
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="card-title text-xl mb-2 py-2 font-extrabold">
@@ -127,9 +161,9 @@ export default function WhatWeDo() {
                   {service.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

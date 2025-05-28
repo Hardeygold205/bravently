@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { PricingCard } from "@/constants/PricingCard";
+import {motion} from "framer-motion";
 
 export default function Pricing() {
   const plans = [
@@ -54,6 +57,15 @@ export default function Pricing() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   return (
     <section className="py-16 bg-base-100">
       <div className="container mx-auto px-4">
@@ -67,7 +79,12 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <PricingCard
               key={index}
@@ -79,7 +96,7 @@ export default function Pricing() {
               recommended={plan.recommended}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

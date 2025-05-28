@@ -1,4 +1,7 @@
+"use client";
+
 import { Terminal, Code2, Code, Cpu, Figma, Hexagon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface TechnologyCardProps {
   title: string;
@@ -14,8 +17,11 @@ const TechnologyCard = ({
   icon,
 }: TechnologyCardProps) => {
   return (
-    <div
-      className="card bg-white shadow-2xl transition-all duration-300 ease-in-out 
+    <motion.div
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="card bg-white rounded-md shadow-2xl transition-all duration-300 ease-in-out 
                        transform hover:translate-y-1.5 hover:shadow-3xl cursor-pointer p-6 h-full z-10">
       <div className="flex flex-col h-full">
         <div className="mb-4 text-primary">{icon}</div>
@@ -23,7 +29,7 @@ const TechnologyCard = ({
         <span className="badge badge-outline badge-sm mb-4">{category}</span>
         <p className="text-base-content/80 flex-grow">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
