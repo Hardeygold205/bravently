@@ -5,26 +5,10 @@ import { NavbarMenu } from "@/constants/NavbarMenu";
 import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
 import Footer from "@/constants/Footer";
 
-// const JetBrains = JetBrains_Mono({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-//   variable: "--font-JetBrains",
-// });
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
 const jostSans = Jost({
   variable: "--font-jost-sans",
   subsets: ["latin"],
 });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Branovax Technology | Powering Bold Innovations",

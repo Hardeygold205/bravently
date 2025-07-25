@@ -7,52 +7,58 @@ import { motion } from "framer-motion";
 
 export function BackgroundGrid({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex  h-full w-full items-center justify-center">
-      <ImageBackground />
-      <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
-        )}
-      />
-      <div className="pointer-events-none bg-gradient-to-b from-blue-200 via-black-200 to-white-50 absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      {children}
+    <div className="relative h-full w-full overflow-y-auto">
+      {" "}
+      <div className="fixed inset-0 -z-10 h-screen w-full overflow-hidden">
+        {" "}
+        <ModernGridBackground />
+        <ImageBackground />
+      </div>
+      <div className="relative z-10"> {children}</div>
     </div>
   );
 }
 
-export function ImageBackground() {
+function ModernGridBackground() {
+  return (
+    <>
+      <div
+        className={cn(
+          "absolute inset-0",
+          "[background-size:40px_40px]",
+          "[background-image:linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]",
+          "opacity-50 dark:opacity-30"
+        )}
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 via-black-200 to-white-50 dark:to-black/30" />
+    </>
+  );
+}
+
+function ImageBackground() {
   return (
     <motion.div
-      initial={{ translateX: 0, translateY: 0 }}
-      animate={{
-        translateX: [0, 10, 0], 
-        translateY: [0, -10, 0], 
-      }}
+      initial={{ opacity: 0.7 }}
+      animate={{ opacity: 0.8 }}
       transition={{
-        duration: 5,
-        ease: "easeInOut",
+        duration: 15,
         repeat: Infinity,
-        repeatDelay: 2,
+        repeatType: "reverse",
+        ease: "easeInOut",
       }}
-      style={{
-        position: "absolute",
-        inset: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        willChange: "transform", 
-      }}>
+      className="fixed inset-0 h-screen w-full">
       <Image
         src="/header-sape.png"
-        alt="Animated background"
-        className="p-10 absolute"
+        alt="Decorative background"
         fill
         priority
+        className="object-cover"
         style={{
-          objectFit: "cover",
+          objectPosition: "center",
+          opacity: 0.9,
+          filter: "brightness(0.8) contrast(1.2)",
         }}
       />
     </motion.div>

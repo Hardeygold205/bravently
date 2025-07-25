@@ -21,42 +21,56 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-const components: { title: string; href: string; description: string }[] = [
+const services = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Web Development",
+    href: "/services/web-development",
+    description: "Custom websites and web applications for your business",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Mobile App Development",
+    href: "/services/mobile-apps",
+    description: "iOS and Android apps built with modern technologies",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "E-Commerce Solutions",
+    href: "/services/ecommerce",
+    description: "Complete online store setups with payment integration",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "UI/UX Design",
+    href: "/services/design",
+    description: "User-centered design that enhances engagement",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    title: "Cloud Solutions",
+    href: "/services/cloud",
+    description: "Scalable cloud infrastructure and migration",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "IT Consulting",
+    href: "/services/consulting",
+    description: "Strategic technology guidance for business growth",
+  },
+];
+
+const products = [
+  {
+    title: "Branovax CMS",
+    href: "/products/cms",
+    description: "Our proprietary content management system",
+  },
+  {
+    title: "SecurePay Gateway",
+    href: "/products/payment-gateway",
+    description: "Secure payment processing solution",
+  },
+  {
+    title: "Analytics Suite",
+    href: "/products/analytics",
+    description: "Business intelligence and data visualization",
   },
 ];
 
@@ -75,12 +89,12 @@ export function NavbarMenu() {
       link: "#products",
     },
     {
-      name: "resources",
-      link: "#recources",
+      name: "Resources",
+      link: "#resources",
     },
     {
-      name: "Learn",
-      link: "#learn",
+      name: "Contact",
+      link: "#contact",
     },
   ];
 
@@ -96,16 +110,17 @@ export function NavbarMenu() {
               <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
+                  <ListItem href="/about" title="Our Company">
+                    Learn about our mission and team
                   </ListItem>
-                  <ListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
+                  <ListItem href="/careers" title="Careers">
+                    Join our team of professionals
                   </ListItem>
-                  <ListItem
-                    href="/docs/primitives/typography"
-                    title="Typography">
-                    Styles for headings, paragraphs, lists...etc
+                  <ListItem href="/clients" title="Client Success">
+                    See our client success stories
+                  </ListItem>
+                  <ListItem href="/blog" title="Blog">
+                    Industry trends and company updates
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -114,12 +129,27 @@ export function NavbarMenu() {
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
+                  {services.map((service) => (
                     <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}>
-                      {component.description}
+                      key={service.title}
+                      title={service.title}
+                      href={service.href}>
+                      {service.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  {products.map((product) => (
+                    <ListItem
+                      key={product.title}
+                      title={product.title}
+                      href={product.href}>
+                      {product.description}
                     </ListItem>
                   ))}
                 </ul>
@@ -128,48 +158,15 @@ export function NavbarMenu() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <ListItem href="/docs" title="Documentation">
-                    Re-usable components built using Radix UI and Tailwind CSS.
+                    Technical guides and API references
                   </ListItem>
-                  <ListItem href="/docs" title="API Reference">
-                    Re-usable components built using Radix UI and Tailwind CSS.
+                  <ListItem href="/case-studies" title="Case Studies">
+                    Detailed client success stories
                   </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
-                  <ListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
-                  </ListItem>
-                  <ListItem
-                    href="/docs/primitives/typography"
-                    title="Typography">
-                    Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
-                  <ListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
-                  </ListItem>
-                  <ListItem
-                    href="/docs/primitives/typography"
-                    title="Typography">
-                    Styles for headings, paragraphs, lists...etc
+                  <ListItem href="/whitepapers" title="Whitepapers">
+                    In-depth technology research
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -177,10 +174,17 @@ export function NavbarMenu() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-4">
-          <NavbarButton variant="primary">Help</NavbarButton>
-          <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-blue-600 dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
-            Get In Touch
-          </button>
+          <NavbarButton
+            target="_blank"
+            href="https://wa.me/+2348138553465"
+            variant="primary">
+            Contact Us
+          </NavbarButton>
+          <Link
+            href="#LetWork"
+            className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-blue-600 dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
+            Get Started
+          </Link>
         </div>
       </NavBody>
       <MobileNav>
@@ -191,7 +195,6 @@ export function NavbarMenu() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
         </MobileNavHeader>
-
         <MobileNavMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}>
@@ -209,13 +212,13 @@ export function NavbarMenu() {
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
               className="w-full">
-              Help
+              Contact Us
             </NavbarButton>
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
               className="w-full">
-              Get In Touch
+              Get Started
             </NavbarButton>
           </div>
         </MobileNavMenu>
