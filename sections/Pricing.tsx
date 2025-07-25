@@ -122,7 +122,7 @@ export default function Pricing() {
     },
   ];
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -149,7 +149,8 @@ export default function Pricing() {
     if (isMobile || !containerRef.current) return;
 
     const container = containerRef.current;
-    const cardWidth = container.children[0]?.offsetWidth || 0;
+    const firstChild = container.firstElementChild as HTMLElement;
+    const cardWidth = firstChild?.offsetWidth || 0;
     const scrollPosition = currentIndex * (cardWidth + 32);
 
     container.scrollTo({

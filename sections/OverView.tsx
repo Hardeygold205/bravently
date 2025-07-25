@@ -34,7 +34,6 @@ export default function OverView() {
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
               Innovating Technology Solutions Since 2021
             </h2>
-
             <p className="text-lg text-gray-600 mb-6">
               Branovax Technologies is a leading software development company
               dedicated to transforming businesses through cutting-edge digital
