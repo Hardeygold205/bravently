@@ -209,15 +209,13 @@ export function NavbarMenu() {
           ))}
           <div className="flex w-full flex-col gap-4">
             <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
+              target="_blank"
+              href="https://wa.me/+2348138553465"
               variant="primary"
               className="w-full">
               Contact Us
             </NavbarButton>
-            <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
-              variant="primary"
-              className="w-full">
+            <NavbarButton href="#LetWork" variant="primary" className="w-full">
               Get Started
             </NavbarButton>
           </div>

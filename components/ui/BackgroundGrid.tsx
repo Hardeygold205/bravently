@@ -32,7 +32,7 @@ function ModernGridBackground() {
         )}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 via-black-200 to-white-50 dark:to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30 dark:to-black/30" />
     </>
   );
 }

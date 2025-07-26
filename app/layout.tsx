@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Branovax Technology | Powering Bold Innovations",
     images: [
       {
-        url: "/Branovax_home.png",
+        url: "/branovax-home.png",
         width: 1200,
         height: 630,
         alt: "Bravanox Technology Logo",

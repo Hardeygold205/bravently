@@ -71,6 +71,7 @@ export default function Pricing() {
         "Analytics dashboard",
         "3 months maintenance",
       ],
+      recommended: true,
     },
     {
       title: "Mobile App Development",
@@ -177,8 +178,8 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-10">
-      <div className="container mx-auto px-4">
+    <section className="py-10 ">
+      <div className="container mx-auto ">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 uppercase">
             Development Packages
@@ -189,33 +190,32 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Mobile/Tablet Grid */}
-        <div className="lg:hidden">
+        <div className="lg:hidden min-h-[50vh]">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             {plans.map((plan, index) => (
-              <PricingCard
-                key={index}
-                title={plan.title}
-                price={plan.price}
-                renewalPrice={plan.renewalPrice}
-                renewalPeriod={plan.renewalPeriod}
-                features={plan.features}
-                recommended={plan.recommended}
-              />
+              <div key={index} className="w-full h-full">
+                <PricingCard
+                  title={plan.title}
+                  price={plan.price}
+                  renewalPrice={plan.renewalPrice}
+                  renewalPeriod={plan.renewalPeriod}
+                  features={plan.features}
+                  recommended={plan.recommended}
+                />
+              </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Desktop Carousel */}
-        <div className="hidden lg:block relative">
+        <div className="hidden lg:block relative ">
           <div
             ref={containerRef}
-            className="flex overflow-x-hidden scrollbar-hide gap-8 py-4 px-2"
+            className="flex overflow-x-hidden scrollbar-hide gap-4 p-5"
             style={{ scrollBehavior: "smooth" }}>
             {plans.map((plan, index) => (
               <div key={index} className="flex-shrink-0 w-1/3 px-2">
@@ -231,7 +231,6 @@ export default function Pricing() {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
           <div className="flex justify-center mt-8 space-x-4">
             <button
               onClick={handlePrev}
