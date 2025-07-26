@@ -15,7 +15,7 @@ export default function OverView() {
             whileInView={{ translateX: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             className="lg:w-1/2">
-            <div className="relative h-100 w-full rounded-xl overflow-hidden shadow-lg">
+            <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/IT-team-building.jpg"
                 alt="Branovax team working on technology solutions"
