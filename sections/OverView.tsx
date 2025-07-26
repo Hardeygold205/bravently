@@ -14,15 +14,14 @@ export default function OverView() {
             initial={{ translateX: -90, opacity: 0 }}
             whileInView={{ translateX: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:w-1/2 w-full">
-            <div className="relative h-96 min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg">
+            className="lg:w-1/2">
+            <div className="relative h-100 w-full rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/IT-team-building.jpg"
                 alt="Branovax team working on technology solutions"
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </motion.div>

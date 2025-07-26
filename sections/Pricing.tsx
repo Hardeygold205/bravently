@@ -190,7 +190,8 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="lg:hidden min-h-[50vh]">
+        {/* Mobile/Tablet Grid */}
+        <div className="lg:hidden">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -198,16 +199,15 @@ export default function Pricing() {
             viewport={{ once: true, amount: 0.1 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             {plans.map((plan, index) => (
-              <div key={index} className="w-full h-full">
-                <PricingCard
-                  title={plan.title}
-                  price={plan.price}
-                  renewalPrice={plan.renewalPrice}
-                  renewalPeriod={plan.renewalPeriod}
-                  features={plan.features}
-                  recommended={plan.recommended}
-                />
-              </div>
+              <PricingCard
+                key={index}
+                title={plan.title}
+                price={plan.price}
+                renewalPrice={plan.renewalPrice}
+                renewalPeriod={plan.renewalPeriod}
+                features={plan.features}
+                recommended={plan.recommended}
+              />
             ))}
           </motion.div>
         </div>
