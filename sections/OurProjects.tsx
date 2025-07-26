@@ -19,22 +19,22 @@ export default function OurProjects() {
             {
               title: "E-Commerce Platform",
               description:
-                "Built a scalable online marketplace with integrated payment processing for a retail chain.",
+                "Built a scalable online marketplace with integrated payment processing through crypto for a retail chain.",
               tags: ["React", "Node.js", "MongoDB"],
               image: "/excel-dashboard.png",
             },
             {
               title: "Porfolio Website System",
               description:
-                "Developed a HIPAA-compliant patient records system for hospital networks.",
+                "Developed a personal portfolio website with Search Engine Optimization.",
               tags: ["TypeScript", "NextJs", "SEO"],
               image: "/porfolio-dasboard.png",
             },
             {
               title: "Social Mobile App",
               description:
-                "Created a secure mobile banking application with biometric authentication.",
-              tags: ["React-Native", "Firebase", "Blockchain"],
+                "Created a secure mobile social application with features like chats, posts and stories.",
+              tags: ["React-Native", "TypeScript", "Supabase"],
               image: "/p2s-dashboard.png",
             },
           ].map((project, index) => (
