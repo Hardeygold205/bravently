@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 
 export default function OverView() {
   return (
-    <section className="py-16 bg-white">
+    <section
+      className="py-16 bg-gray-900 relative overflow-hidden"
+      style={{
+        clipPath: "polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%)",
+      }}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Image Column */}
@@ -32,10 +36,10 @@ export default function OverView() {
             whileInView={{ translateX: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             className="lg:w-1/2">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white">
               Innovating Technology Solutions Since 2021
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-200 mb-6">
               Branovax Technologies is a leading software development company
               dedicated to transforming businesses through cutting-edge digital
               solutions. With our headquarters in Nigeria and a global client
@@ -59,10 +63,10 @@ export default function OverView() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
                     Our Mission
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-200">
                     To empower businesses with robust, scalable technology
                     solutions that drive growth, efficiency, and competitive
                     advantage in the digital age.
@@ -85,10 +89,10 @@ export default function OverView() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
                     Our Approach
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-200">
                     We combine technical expertise with deep business
                     understanding to deliver solutions that are not just
                     technologically advanced but also aligned with your
@@ -98,7 +102,7 @@ export default function OverView() {
               </div>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
+            <div className="mt-8 md:mb-0 mb-14 grid grid-cols-2 gap-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-3xl font-bold text-primary">50+</p>
                 <p className="text-gray-600">Work Ratings</p>
