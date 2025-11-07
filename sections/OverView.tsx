@@ -13,13 +13,13 @@ export default function OverView() {
       }}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Image Column */}
           <motion.div
             initial={{ translateX: -90, opacity: 0 }}
             whileInView={{ translateX: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             className="lg:w-1/2 w-full">
-            <div className="relative h-96 min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg">
+            <div className="p-10 bg-blue-200 rotate-10 absolute w-150 min-h-[355px] rounded-2xl opacity-10"></div>
+            <div className="relative h-96 min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg hover:scale-105 ease-in-out transition-all duration-300">
               <Image
                 src="/IT-team-building.jpg"
                 alt="Branovax team working on technology solutions"
@@ -30,7 +30,6 @@ export default function OverView() {
               />
             </div>
           </motion.div>
-
           <motion.div
             initial={{ translateX: 90, opacity: 0 }}
             whileInView={{ translateX: 0, opacity: 1 }}
