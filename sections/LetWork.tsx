@@ -264,7 +264,6 @@ export default function LetWork() {
             required
           />
 
-          {/* File Upload (Placeholder for EmailJS limitation) */}
           {/* <div className="text-sm text-slate-500 dark:text-slate-400">
             📎 Attach project documents (PDF, DOC, JPG - *Note: Attachments
             cannot be sent via standard EmailJS API. Please mention in the
