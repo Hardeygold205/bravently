@@ -11,6 +11,7 @@ interface PricingCardProps {
   renewalPeriod: string;
   features: string[];
   recommended?: boolean;
+  onSelect?: () => void;
 }
 
 export function PricingCard({
@@ -20,6 +21,7 @@ export function PricingCard({
   renewalPeriod,
   features,
   recommended = false,
+  onSelect,
 }: PricingCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -74,6 +76,7 @@ export function PricingCard({
       </ul>
 
       <Link
+        onClick={onSelect}
         href="#LetWork"
         className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-blue-600 dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
         Get Started

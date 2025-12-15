@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
-import { NavbarMenu } from "@/constants/NavbarMenu";
+import { NavbarMenu } from "@/components/ui/NavbarMenu";
 import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
-import Footer from "@/constants/Footer";
+import Footer from "@/components/ui/Footer";
 
 const jostSans = Jost({
   variable: "--font-jost-sans",

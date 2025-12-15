@@ -1,6 +1,6 @@
 "use client";
 
-import { InfoList } from "@/constants/InfoList";
+import { InfoList } from "@/components/ui/InfoList";
 import { motion } from "motion/react";
 import React from "react";
 import { ColourfulText } from "@/components/ui/colourful-text";

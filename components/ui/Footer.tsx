@@ -47,9 +47,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links Grid */}
         <div className="lg:col-span-5 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {/* Services */}
+
           <div>
             <h6 className="text-lg font-semibold mb-4 text-white">Services</h6>
             <ul className="space-y-3">
